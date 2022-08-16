@@ -2,7 +2,12 @@ import HomePage from './home/HomePage';
 
 function App() {
   return (
-    <HomePage />
+    <div>
+      <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </head>
+      <HomePage />
+    </div>
   );
 }
 
