@@ -1,9 +1,11 @@
-import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
     <div>
-      <Button variant="contained">Hello World</Button>
+      <Link to="/sauce" className="btn btn-primary">
+        Sauce Page
+      </Link>
     </div>
   );
 }
