@@ -6,6 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
 
 const theme = createTheme();
 
@@ -13,22 +14,32 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div>
-        <head>
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
-        </head>
-        <AppBar position="relative">
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap>Voxenfree</Typography>
-          </Toolbar>
-        </AppBar>
-        <Router>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/sauce" element={<SaucePage />} />
-          </Routes>
-        </Router>
-      </div>
+      <AppBar position="relative">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            Voxenfree
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sauce" element={<SaucePage />} />
+        </Routes>
+      </Router>
+      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
+        <Typography variant="h6" align="center" gutterBottom>
+          Footer
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="text.secondary"
+          component="p"
+        >
+          Something here to give the footer a purpose!
+        </Typography>
+      </Box>
     </ThemeProvider>
   );
 }
