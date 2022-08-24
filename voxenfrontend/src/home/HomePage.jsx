@@ -4,14 +4,30 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function HomePage() {
+
+  const [patches, setPatches] = useState([]);
+
+    const getPatches = async () => {
+        try {
+          const response = await axios.get("http://127.0.0.1:8000/products/");
+          setPatches(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        getPatches();
+      }, []);
+
   return (
     <Box
       sx={{
@@ -44,13 +60,12 @@ function HomePage() {
           direction="row"
           spacing={2}
           justifyContent="center"
-        >
-        </Stack>
+        ></Stack>
       </Container>
       <Container sx={{ py: 8 }} maxWidth="md">
         <Grid container spacing={4}>
-          {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
+          {patches.map((patch) => (
+            <Grid item key={patch.id} xs={12} sm={6} md={4}>
               <Card
                 sx={{
                   height: "100%",
@@ -58,23 +73,12 @@ function HomePage() {
                   flexDirection: "column",
                 }}
               >
-                <CardMedia
-                  component="img"
-                  sx={{
-                    // 16:9
-                    //pt: "56.25%",
-                  }}
-                  image="https://i.imgur.com/vABXVS9.jpg"
-                  alt="random"
-                />
+                <CardMedia component="img" image={patch.img} alt="random" />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Heading
+                    {patch.name}
                   </Typography>
-                  <Typography>
-                    This is a media card. You can use this section to describe
-                    the content.
-                  </Typography>
+                  <Typography>{patch.description}</Typography>
                 </CardContent>
                 <CardActions>
                   <Button size="small">View</Button>
