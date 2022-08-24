@@ -28,7 +28,7 @@ function HomePage() {
           color="text.primary"
           gutterBottom
         >
-          Featured
+          Patches
         </Typography>
         <Typography
           variant="h5"
@@ -45,8 +45,6 @@ function HomePage() {
           spacing={2}
           justifyContent="center"
         >
-          <Button variant="contained">Main call to action</Button>
-          <Button variant="outlined">Secondary action</Button>
         </Stack>
       </Container>
       <Container sx={{ py: 8 }} maxWidth="md">
@@ -64,9 +62,9 @@ function HomePage() {
                   component="img"
                   sx={{
                     // 16:9
-                    pt: "56.25%",
+                    //pt: "56.25%",
                   }}
-                  image="https://source.unsplash.com/random"
+                  image="https://i.imgur.com/vABXVS9.jpg"
                   alt="random"
                 />
                 <CardContent sx={{ flexGrow: 1 }}>

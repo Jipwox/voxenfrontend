@@ -29,7 +29,7 @@ function App() {
       </Router>
       <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Voxenfree
         </Typography>
         <Typography
           variant="subtitle1"
@@ -37,7 +37,7 @@ function App() {
           color="text.secondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Patches
         </Typography>
       </Box>
     </ThemeProvider>
