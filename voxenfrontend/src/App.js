@@ -6,19 +6,29 @@ import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 const theme = createTheme();
+
+const rightStyle = {
+  // This group of buttons will be aligned to the right
+  background: "white",
+  marginLeft: "auto",
+};
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="sticky">
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Voxenfree
-          </Typography>
+            <Typography variant="h6" color="inherit">
+              Voxenfree
+            </Typography>
+            <Button color="success" sx={rightStyle}>
+              Hi
+            </Button>
         </Toolbar>
       </AppBar>
       <Router>

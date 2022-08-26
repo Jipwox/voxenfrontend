@@ -26,7 +26,7 @@ function HomePage() {
 
     useEffect(() => {
         getPatches();
-      }, []);
+      });
 
   return (
     <Box

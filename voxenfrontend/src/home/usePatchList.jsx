@@ -15,7 +15,8 @@ function usePatchList() {
 
     useEffect(() => {
         getPatches();
-      }, []);
+        console.log(patches);
+      });
 
     return {
         patches: patches
